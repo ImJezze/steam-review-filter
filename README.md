@@ -12,6 +12,7 @@ The keyword highliting is currently not part of the user script.
 2. Install the userscript.
 * Click [steam-review-filter.user.js](https://github.com/ImJezze/steam-review-filter/raw/main/steam-review-filter.user.js) and confirm installation in the manager
 * Or create a new userscript in the manager and copy the contents of the steam-review-filter.user.js file
+
 ## Usage
 * Open the Steam store page of any game
 * Scroll to the bottom of the page
@@ -19,3 +20,19 @@ The keyword highliting is currently not part of the user script.
 * Here, in addition to the usual filters, there is a new input field "enter serach term"
 * Enter any search term (incl. regular expressions) and confirm with the Enter key to filter the reviews
 * Scroll to the bottom of the page to load more reviews, which are automatically filtered
+
+### Examples
+* `performance`  
+  filters reviews that contain the word "performance"
+* `performance|fps`  
+  filters reviews that contain the words "performance" or "fps"
+* `performance.*fps`  
+  filters reviews that contain the words "performance" and "fps" in the same order
+* `(?=.*performance)(?=.*fps)`  
+  filters reviews that contain the words "performance" and "fps" in any order
+* `(?=.*performance)(?=.*fps|frames)`  
+  filters reviews that contain the words "performance" and either "fps" or "frames"  
+* `(?=.*performance)(?=.*fps|frames)|gameplay`  
+  filters reviews that contain the words "performance" and either "fps" or "frames"  
+  or filters reviews that contain the word "gameplay"
+  
