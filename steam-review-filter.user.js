@@ -29,7 +29,7 @@ observer.observe(document.getElementById('AppHubCards'), {
 function filterCardRow(element)
 {
   let term = document.getElementById('term');
-  
+
   if (element.classList.contains('apphub_CardRow'))
   {
     let cards = element.getElementsByClassName('apphub_Card');
@@ -38,16 +38,16 @@ function filterCardRow(element)
       // make all cards the same size (alligned in two columns)
       $(e).css('width', '460px');
       $(e).css('height', '400px');
-      
+
       let content = element.getElementsByClassName('apphub_CardContentMain')[0];
       $(content).css('height', '350px');
-      
+
       // add card directly into the page
       element.parentNode.insertBefore(e, null);
-    
+
       filterCard(e, term.value);
     });
-    
+
     // remove card row
     if (element.parentNode)
     {
@@ -58,7 +58,7 @@ function filterCardRow(element)
 
 function filterCards(keyword)
 {
-  let term = document.getElementById('term');  
+  let term = document.getElementById('term');
   let cards = document.getElementsByClassName('apphub_Card');
   Array.from(cards).forEach(e =>
   {
@@ -69,23 +69,18 @@ function filterCards(keyword)
 function filterCard(element, keyword)
 {
   keyword = keyword == filterKeywordBlank ? '' : keyword;
-  
+
   if (element.classList.contains('apphub_Card'))
-  {    
+  {
     let cardTextContent = element.getElementsByClassName('apphub_CardTextContent')[0];
     let expression = new RegExp(keyword, 'i')
     let show = !keyword || expression.match(cardTextContent.innerText);
-    
-    showElement(show, element);
-  } 
-};
 
-function showElement(show, element)
-{
-  element.classList.remove('apphub_Card_hidden');
-  if (!show)
-  {
-    element.classList.add('apphub_Card_hidden');
+    element.classList.remove('apphub_Card_hidden');
+    if (!show)
+    {
+      element.classList.add('apphub_Card_hidden');
+    }
   }
 };
 
@@ -110,7 +105,7 @@ filterKeywordInput.onblur = function() {
     this.value = filterKeywordBlank;
   }
 };
-filterKeywordInput.value = "enter search term"
+filterKeywordInput.value = filterKeywordBlank;
 filterKeywordInput.autocomplete = "off";
 
 // add input field
@@ -123,23 +118,23 @@ let steamCSS = `
   .apphub_SectionFilterLabel {
     display: none;
   }
-  
+
   /* hide 'about reviews' button */
   .learnMore {
     display: none;
   }
-  
+
   /* hide reviews */
   .apphub_Card_hidden {
     display: none;
   }
-  
+
   /* resize language field */
   #filterlanguage {
     width: auto;
     min-width: 150px;
   }
-  
+
   /* resize input field */
   #term {
     height: 22px;
