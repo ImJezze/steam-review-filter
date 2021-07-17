@@ -17,5 +17,5 @@ The keyword highliting is currently not part of the user script.
 * Scroll to the bottom of the page
 * Click on the link "Browse all reviews"
 * Here, in addition to the usual filters, there is a new input field "enter serach term"
-* Enter any search term and confirm with the Enter key to filter the reviews
-* Scoll to bottom of the page to load move reviews, which will automaticall filtered
+* Enter any search term (incl. regular expressions) and confirm with the Enter key to filter the reviews
+* Scroll to the bottom of the page to load more reviews, which are automatically filtered
