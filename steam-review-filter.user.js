@@ -3,7 +3,8 @@
 // @author        Tobias Bindel
 // @license       MIT
 // @version       1.0
-// @description   https://github.com/ImJezze/steam-review-filter.git
+// @description   This user script allows you to filter the list of Steam reviews by a keyword.
+// @homepageURL   https://github.com/ImJezze/steam-review-filter.git
 // @match         https://steamcommunity.com/app/*/*reviews/*
 // @require       https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js
 // @grant         GM_addStyle
